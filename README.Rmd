@@ -1,0 +1,109 @@
+---
+output:
+  html_document:
+    highlight: null
+    css: css/style.css
+    keep_md: true
+---
+
+```{r, echo=FALSE}
+library(stringr)
+
+date <- "9/28/2017"
+vendor <- "Pizza Capri"
+title <- "Occupy the government: Analyzing presidential and congressional discursive response to movement repression"
+speaker <- "Joshua Mausolf"
+department <- "Department of Sociology"
+university <- "University of Chicago"
+github_home <- "https://github.com/uchicago-computation-workshop"
+short_title_n = 3
+
+```
+
+```{r, echo=FALSE}
+#Function to Shorten Title
+small_title <- function(x, n=3) {
+  ul <- unlist(strsplit(x, split = "\\s+"))[1:n]
+  paste(ul,collapse=" ")
+}
+
+#Year
+year <- substr(date, nchar(date)-4+1, nchar(date))
+
+#Author Name
+author_clean <- str_replace_all(str_to_lower(speaker), " ", "_")
+author_lastname <- tail(strsplit(author_clean,split="_")[[1]],1)
+
+#Repository Name
+repo = paste(year, author_clean, sep = "_")
+issues_page <- paste(github_home, repo, "issues", sep="/")
+
+#Create File Name Parts
+short_title <- small_title(title, short_title_n)
+paper_file <- paste(year, author_lastname, short_title, sep="  ")
+
+#Clean Up File Name
+punct <- '[]\\?!\"\'#$%&(){}+*/:;,._`|~\\[<=>@\\^-]'
+lowered_name <- str_to_lower(paper_file)
+stripped_name <- str_replace_all(lowered_name, punct, "")
+cleaned_name <- str_replace_all(stripped_name, " ", "_")
+cleaned_paper_file <- paste(cleaned_name, "pdf", sep=".")
+
+#File Name Link
+paper_link = paste(github_home, repo, "blob/master", cleaned_paper_file, sep="/"  )
+
+
+#Clean Short Title
+short_title_clean <- str_replace_all(short_title, punct, "")
+
+```
+
+<br>
+
+<h3 class=pfblock-header> The Computation Workshop Presents </h3>
+
+<h1 class=pfblock-header3> `r speaker` </h1>
+<h3 class=pfblock-header3> `r department` </h3>
+<h3 class=pfblock-header3> `r university` </h3>
+
+<br><br>
+
+
+
+<p class=pfblock-header3>The [Computation Workshop](https://macss.uchicago.edu/content/computation-workshop) at the University of Chicago cordially invites you to attend next week's talk:</p>
+
+<br>
+
+<div class=center-justified2>
+<h2 class=pfblock-header> 
+  <a href="`r paper_link`" class="btn-custom-color-bk">`r title`</a>
+</h2>
+
+<br>
+</div>
+
+<h4 class=pfblock-header3> Thursday, `r date` </h4>
+<h4 class=pfblock-header3> 11:00am-12:20pm </h4>
+<h4 class=pfblock-header3> Saieh Hall 247 </h4>
+
+<br>
+
+<p class=pfblock-header3>A light lunch will be provided by `r vendor`.</p>
+
+<br><br>
+
+<!--Insert Faculty Bio Here-->
+<div class=center-justified2>
+
+**Joshua Mausolf** is a PhD candidate in the Department of Sociology at the University of Chicago. He holds a BA, summa cum laude, from New York University, received his MA at the University of Chicago, and was a summer fellow at Data Science for Social Good. Joshua’s general interests intersect at the boundaries of sociology, political science, and economics, which he explores using computational and statistical methods. He is broadly interested in social stratification and inequality, labor markets, corporate boards and organizations, campaign finance, political ideology and polarization, political and media discourse, and social movements.  
+
+
+</div>
+<br><br>
+
+---
+
+<p class=footertext> The 2017-2018 [Computation Workshop](https://macss.uchicago.edu/content/computation-workshop) meets each Thursday from 11 to 12:20 p.m. in Saieh 247. All interested faculty and graduate students are welcome.</p> 
+
+
+<p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on on the [issues page](`r issues_page`) of the [workshop's public repository on GitHub](https://github.com/uchicago-computation-workshop).</p>
