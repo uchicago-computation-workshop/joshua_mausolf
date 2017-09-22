@@ -3,13 +3,14 @@ output:
   html_document:
     highlight: null
     css: css/style.css
+    self_contained: no
     keep_md: true
 ---
 
 ```{r, echo=FALSE}
 library(stringr)
 
-date <- "9/28/2017"
+date <- "9/22/2017"
 vendor <- "Pizza Capri"
 title <- "Occupy the government: Analyzing presidential and congressional discursive response to movement repression"
 speaker <- "Joshua Mausolf"
@@ -35,7 +36,8 @@ author_clean <- str_replace_all(str_to_lower(speaker), " ", "_")
 author_lastname <- tail(strsplit(author_clean,split="_")[[1]],1)
 
 #Repository Name
-repo = paste(year, author_clean, sep = "_")
+#repo = paste(year, author_clean, sep = "_")
+repo = author_clean
 issues_page <- paste(github_home, repo, "issues", sep="/")
 
 #Create File Name Parts
@@ -70,13 +72,13 @@ short_title_clean <- str_replace_all(short_title, punct, "")
 
 
 
-<p class=pfblock-header3>The [Computation Workshop](https://macss.uchicago.edu/content/computation-workshop) at the University of Chicago cordially invites you to attend next week's talk:</p>
+<p class=pfblock-header3>The <a href="https://macss.uchicago.edu/content/computation-workshop"> Computation Workshop </a> at the University of Chicago cordially invites you to attend next week's talk:</p>
 
 <br>
 
-<div class=center-justified2>
+<div class=pfblock-header3>
 <h2 class=pfblock-header> 
-  <a href="`r paper_link`" class="btn-custom-color-bk">`r title`</a>
+  <a href="`r paper_link`" >`r title`</a>
 </h2>
 
 <br>
@@ -93,17 +95,18 @@ short_title_clean <- str_replace_all(short_title, punct, "")
 <br><br>
 
 <!--Insert Faculty Bio Here-->
-<div class=center-justified2>
+<div class=pfblock-header3>
+  <p class=footertext2>
 
-**Joshua Mausolf** is a PhD candidate in the Department of Sociology at the University of Chicago. He holds a BA, summa cum laude, from New York University, received his MA at the University of Chicago, and was a summer fellow at Data Science for Social Good. Joshua’s general interests intersect at the boundaries of sociology, political science, and economics, which he explores using computational and statistical methods. He is broadly interested in social stratification and inequality, labor markets, corporate boards and organizations, campaign finance, political ideology and polarization, political and media discourse, and social movements.  
-
+  **Joshua Mausolf** is a PhD student in the Department of Sociology at the University of Chicago. He holds a BA, summa cum laude, from New York University, received his MA at the University of Chicago, and was a summer fellow at Data Science for Social Good. Joshua’s general interests intersect at the boundaries of sociology, political science, and economics, which he explores using computational and statistical methods. He is broadly interested in social stratification and inequality, labor markets, corporate boards and organizations, campaign finance, political ideology and polarization, political and media discourse, and social movements.  
+  </p>
 
 </div>
 <br><br>
 
 ---
 
-<p class=footertext> The 2017-2018 [Computation Workshop](https://macss.uchicago.edu/content/computation-workshop) meets each Thursday from 11 to 12:20 p.m. in Saieh 247. All interested faculty and graduate students are welcome.</p> 
+<p class=footertext> The 2017-2018 <a href="https://macss.uchicago.edu/content/computation-workshop"> Computation Workshop </a> meets each Thursday from 11 to 12:20 p.m. in Saieh 247. All interested faculty and graduate students are welcome.</p> 
 
 
-<p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on on the [issues page](`r issues_page`) of the [workshop's public repository on GitHub](https://github.com/uchicago-computation-workshop).</p>
+<p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on on the <a href="`r issues_page`"> issues page </a> of the <a href="https://github.com/uchicago-computation-workshop"> workshop's public repository on GitHub.</a></p>

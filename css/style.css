@@ -375,6 +375,18 @@ textarea.form-control {
 	
 }
 
+.footertext2 {
+  text-align: justify;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 90%;
+  font-style: normal;
+  font-size: 100%;
+  a { color: #428bca; }
+	
+}
+
+
 .calltoaction *{
     text-align: center;
 }
