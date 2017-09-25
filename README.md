@@ -52,4 +52,4 @@
 <p class=footertext> The 2017-2018 <a href="https://macss.uchicago.edu/content/computation-workshop"> Computation Workshop </a> meets each Thursday from 11 to 12:20 p.m. in Saieh 247. All interested faculty and graduate students are welcome.</p> 
 
 
-<p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on on the <a href="https://github.com/uchicago-computation-workshop/joshua_mausolf/issues"> issues page </a> of the <a href="https://github.com/uchicago-computation-workshop"> workshop's public repository on GitHub.</a></p>
+<p class=footertext>Students in the Masters of Computational Social Science program are expected to attend and join the discussion by posting a comment on the <a href="https://github.com/uchicago-computation-workshop/joshua_mausolf/issues"> issues page </a> of the <a href="https://github.com/uchicago-computation-workshop"> workshop's public repository on GitHub.</a></p>
